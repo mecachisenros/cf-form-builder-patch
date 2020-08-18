@@ -1,0 +1,17 @@
+{
+  "name": "cf-builder",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "wp-scripts start",
+    "build": "wp-scripts build"
+  },
+  "author": "Andrei Mondoc",
+  "license": "ISC",
+  "devDependencies": {
+    "@calderajs/form-builder": "^1.2.5",
+    "@wordpress/scripts": "^12.1.1",
+    "react": "^16.9.0"
+  }
+}
