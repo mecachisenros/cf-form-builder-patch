@@ -1,4 +1,4 @@
-<?php 
+<?php
 /*
 --------------------------------------------------------------------------------
 Plugin Name: Respect CF Porcessor Order
@@ -24,18 +24,18 @@ class CF_Form_Builder_Patch {
      */
     const CORE_SCRIPT_HANDLE = 'cf-form-builder';
 
-    /** 
+    /**
      * Constructor.
      */
     public function __construct() {
 
-        $this->register_scripts();
+        add_action( 'caldera_forms_admin_assets_scripts_registered', [ $this, 'register_scripts' ] );
         add_action( 'caldera_forms_edit_start', [ $this, 'overrride_form_builder_script' ] );
 
     }
 
     /**
-     * Registers our scripts in order 
+     * Registers our scripts in order
      * to later override CF core script.
      */
     public function register_scripts() {
@@ -54,8 +54,8 @@ class CF_Form_Builder_Patch {
          * @see https://github.com/CalderaWP/Caldera-Forms/blob/master/classes/admin/assets.php#L305
          */
         wp_localize_script(
-            static::SCRIPT_HANDLE, 
-            'CF_FORM_BUILDER', 
+            static::SCRIPT_HANDLE,
+            'CF_FORM_BUILDER',
             [
                 'strings' => [
                     'if'=> esc_html__( 'If', 'caldera-forms'),
